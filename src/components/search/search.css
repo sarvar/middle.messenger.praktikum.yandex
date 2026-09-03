@@ -1,0 +1,14 @@
+.search {
+  padding: 10px;
+}
+
+.search__field {
+  width: 100%;
+  padding: 8px;
+  font-size: 12px;
+  text-align: center;
+  background-color: var(--color-bg-muted);
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}

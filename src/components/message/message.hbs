@@ -1,0 +1,10 @@
+<li class="message {{#if own}}message_own{{/if}}">
+  <div class="message__bubble">
+    {{#if image}}
+      <img class="message__image" src="{{image}}" alt="Изображение">
+    {{else}}
+      <p class="message__text">{{text}}</p>
+    {{/if}}
+    <span class="message__time">{{time}}</span>
+  </div>
+</li>

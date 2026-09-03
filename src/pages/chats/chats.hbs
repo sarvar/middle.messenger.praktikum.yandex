@@ -1,0 +1,43 @@
+<main class="chats">
+  <aside class="chats__sidebar">
+    <div class="chats__profile">
+      {{> link label="Профиль >" href="/profile.html"}}
+    </div>
+    {{> search}}
+    <ul class="chats__list">
+      {{#each chats}}
+        {{> chat-item}}
+      {{/each}}
+    </ul>
+  </aside>
+  <section class="chats__content">
+    {{#if selected}}
+      <header class="chats__header">
+        {{> avatar}}
+        <span class="chats__header-name">{{selected.name}}</span>
+        <button class="chats__menu" type="button">⋮</button>
+        <ul class="chats__popup">
+          <li class="chats__popup-item">
+            <span class="chats__popup-icon">+</span>Добавить пользователя
+          </li>
+          <li class="chats__popup-item">
+            <span class="chats__popup-icon">×</span>Удалить пользователя
+          </li>
+        </ul>
+      </header>
+      <ul class="chats__messages">
+        <li class="chats__date">19 июня</li>
+        {{#each messages}}
+          {{> message}}
+        {{/each}}
+      </ul>
+      <form class="chats__form">
+        <button class="chats__attach" type="button">📎</button>
+        <input class="chats__input" type="text" name="message" placeholder="Сообщение">
+        <button class="chats__send" type="submit">→</button>
+      </form>
+    {{else}}
+      <p class="chats__empty">Выберите чат чтобы отправить сообщение</p>
+    {{/if}}
+  </section>
+</main>

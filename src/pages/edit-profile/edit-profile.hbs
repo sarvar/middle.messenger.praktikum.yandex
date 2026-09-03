@@ -1,0 +1,16 @@
+<main class="profile">
+  <a class="profile__back" href="/profile.html">←</a>
+  <div class="profile__content">
+    {{> avatar size="large"}}
+    <form class="profile__form">
+      <ul class="profile__fields">
+        {{#each fields}}
+          {{> profile-row}}
+        {{/each}}
+      </ul>
+      <div class="profile__submit">
+        {{> button label="Сохранить" type="submit"}}
+      </div>
+    </form>
+  </div>
+</main>
