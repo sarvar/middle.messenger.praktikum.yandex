@@ -6,6 +6,7 @@
 
 - Деплой: https://middle-messenger-praktikum.netlify.app
 - Макет: [Figma](https://www.figma.com/file/24EUnEHGEDNLdOcxg7ULwV/Chat_external_link)
+- Pull request Sprint 1: https://github.com/sarvar/middle.messenger.praktikum.yandex/pull/4
 
 ## Описание
 
