@@ -21,6 +21,10 @@
   outline: none;
 }
 
+.input__field::placeholder {
+  color: var(--color-text-muted);
+}
+
 .input__error {
   display: block;
   margin-top: 4px;

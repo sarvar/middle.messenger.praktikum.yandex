@@ -2,13 +2,13 @@
   <form class="auth__form">
     <h1 class="auth__title">Регистрация</h1>
     <div class="auth__fields">
-      {{> input label="Почта" name="email" value="pochta@yandex.ru"}}
-      {{> input label="Логин" name="login" value="ivanivanov"}}
-      {{> input label="Имя" name="first_name" value="Иван"}}
-      {{> input label="Фамилия" name="second_name" value="Иванов"}}
-      {{> input label="Телефон" name="phone" value="+7 (909) 967 30 30"}}
-      {{> input label="Пароль" name="password" type="password" value="password123"}}
-      {{> input label="Пароль (ещё раз)" name="password_repeat" type="password" value="password1234" error="Пароли не совпадают"}}
+      {{> input label="Почта" name="email" placeholder="pochta@yandex.ru"}}
+      {{> input label="Логин" name="login" placeholder="ivanivanov"}}
+      {{> input label="Имя" name="first_name" placeholder="Иван"}}
+      {{> input label="Фамилия" name="second_name" placeholder="Иванов"}}
+      {{> input label="Телефон" name="phone" placeholder="+7 (909) 967 30 30"}}
+      {{> input label="Пароль" name="password" type="password"}}
+      {{> input label="Пароль (ещё раз)" name="password_repeat" type="password" error="Пароли не совпадают"}}
     </div>
     <div class="auth__footer">
       {{> button label="Зарегистрироваться" type="submit"}}

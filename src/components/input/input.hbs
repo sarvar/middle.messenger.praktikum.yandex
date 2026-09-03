@@ -4,8 +4,7 @@
     class="input__field"
     type="{{#if type}}{{type}}{{else}}text{{/if}}"
     name="{{name}}"
-    value="{{value}}"
-    placeholder="{{placeholder}}"
+    {{#if placeholder}}placeholder="{{placeholder}}"{{/if}}
   >
   {{#if error}}<span class="input__error">{{error}}</span>{{/if}}
 </label>
