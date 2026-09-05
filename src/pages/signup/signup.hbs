@@ -1,0 +1,18 @@
+<main class="auth">
+  <form class="auth__form">
+    <h1 class="auth__title">Регистрация</h1>
+    <div class="auth__fields">
+      {{> input label="Почта" name="email" placeholder="pochta@yandex.ru"}}
+      {{> input label="Логин" name="login" placeholder="ivanivanov"}}
+      {{> input label="Имя" name="first_name" placeholder="Иван"}}
+      {{> input label="Фамилия" name="second_name" placeholder="Иванов"}}
+      {{> input label="Телефон" name="phone" placeholder="+7 (909) 967 30 30"}}
+      {{> input label="Пароль" name="password" type="password"}}
+      {{> input label="Пароль (ещё раз)" name="password_repeat" type="password"}}
+    </div>
+    <div class="auth__footer">
+      {{> button label="Зарегистрироваться" type="submit"}}
+      {{> link label="Войти" href="/index.html"}}
+    </div>
+  </form>
+</main>

@@ -1,0 +1,17 @@
+<main class="profile">
+  <a class="profile__back" href="/chats.html">←</a>
+  <div class="profile__content">
+    {{> avatar size="large"}}
+    <h1 class="profile__name">Иван</h1>
+    <ul class="profile__list">
+      {{#each fields}}
+        {{> profile-row}}
+      {{/each}}
+    </ul>
+    <div class="profile__actions">
+      {{> link label="Изменить данные" href="/edit-profile.html"}}
+      {{> link label="Изменить пароль" href="/edit-password.html"}}
+      {{> link label="Выйти" href="/index.html" class="link_danger"}}
+    </div>
+  </div>
+</main>

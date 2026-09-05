@@ -1,0 +1,22 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.error__code {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.error__text {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.error .link {
+  margin-top: 60px;
+  font-size: 11px;
+}

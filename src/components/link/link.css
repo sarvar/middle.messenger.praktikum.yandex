@@ -1,0 +1,11 @@
+.link {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.link_danger {
+  color: var(--color-danger);
+}

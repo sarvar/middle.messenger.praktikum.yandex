@@ -1,0 +1,37 @@
+.input {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.input__label {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.input__field {
+  width: 100%;
+  padding: 4px 0;
+  font-size: 15px;
+  color: var(--color-text);
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-primary);
+  outline: none;
+}
+
+.input__field::placeholder {
+  color: var(--color-text-muted);
+}
+
+.input__error {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  color: var(--color-danger);
+}
+
+.input_error .input__field {
+  color: var(--color-danger);
+}

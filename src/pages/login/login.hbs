@@ -1,0 +1,13 @@
+<main class="auth">
+  <form class="auth__form">
+    <h1 class="auth__title">Вход</h1>
+    <div class="auth__fields">
+      {{> input label="Логин" name="login" placeholder="ivanivanov"}}
+      {{> input label="Пароль" name="password" type="password"}}
+    </div>
+    <div class="auth__footer">
+      {{> button label="Авторизоваться" type="submit"}}
+      {{> link label="Нет аккаунта?" href="/signup.html"}}
+    </div>
+  </form>
+</main>

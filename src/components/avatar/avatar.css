@@ -1,0 +1,15 @@
+.avatar {
+  flex-shrink: 0;
+  background-color: var(--color-bg-muted);
+  border-radius: 50%;
+}
+
+.avatar_small {
+  width: 47px;
+  height: 47px;
+}
+
+.avatar_large {
+  width: 130px;
+  height: 130px;
+}
