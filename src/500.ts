@@ -2,7 +2,9 @@ import './styles/global.css';
 import './components/link/link.css';
 import './pages/error/error.css';
 
-import { render } from './utils/render';
-import template from './pages/error/error.hbs?raw';
+import { renderDOM } from './core';
+import ErrorPage from './pages/error/ErrorPage';
 
-render(template, { code: '500', text: 'Мы уже фиксим' });
+document.addEventListener('DOMContentLoaded', () => {
+  renderDOM('#app', new ErrorPage({ code: '500', text: 'Мы уже фиксим' }));
+});

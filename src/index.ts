@@ -4,7 +4,9 @@ import './components/input/input.css';
 import './components/link/link.css';
 import './pages/login/auth.css';
 
-import { render } from './utils/render';
-import template from './pages/login/login.hbs?raw';
+import { renderDOM } from './core';
+import LoginPage from './pages/login/LoginPage';
 
-render(template);
+document.addEventListener('DOMContentLoaded', () => {
+  renderDOM('#app', new LoginPage());
+});

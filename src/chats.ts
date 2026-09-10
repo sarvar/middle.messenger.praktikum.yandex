@@ -6,8 +6,9 @@ import './components/message/message.css';
 import './components/search/search.css';
 import './pages/chats/chats.css';
 
-import { render } from './utils/render';
-import { chats, messages } from './utils/data';
-import template from './pages/chats/chats.hbs?raw';
+import { renderDOM } from './core';
+import ChatsPage from './pages/chats/ChatsPage';
 
-render(template, { chats, messages, selected: { name: 'Вадим' } });
+document.addEventListener('DOMContentLoaded', () => {
+  renderDOM('#app', new ChatsPage());
+});

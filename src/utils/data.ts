@@ -27,9 +27,3 @@ export const profileFields = [
   { label: 'Имя в чате', value: 'Иван' },
   { label: 'Телефон', value: '+7 (909) 967 30 30' },
 ];
-
-export const passwordFields = [
-  { label: 'Старый пароль', value: '•••••••••' },
-  { label: 'Новый пароль', value: '••••••••••' },
-  { label: 'Повторите новый пароль', value: '••••••••••' },
-];

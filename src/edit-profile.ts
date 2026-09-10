@@ -1,11 +1,12 @@
 import './styles/global.css';
 import './components/avatar/avatar.css';
 import './components/button/button.css';
-import './components/profile-row/profile-row.css';
+import './components/input/input.css';
 import './pages/profile/profile.css';
 
-import { render } from './utils/render';
-import { profileFields } from './utils/data';
-import template from './pages/edit-profile/edit-profile.hbs?raw';
+import { renderDOM } from './core';
+import EditProfilePage from './pages/edit-profile/EditProfilePage';
 
-render(template, { fields: profileFields });
+document.addEventListener('DOMContentLoaded', () => {
+  renderDOM('#app', new EditProfilePage());
+});
