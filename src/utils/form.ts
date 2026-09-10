@@ -19,7 +19,7 @@ function passwordsMatch(fields: Input[]): boolean {
   return false;
 }
 
-export function collectFormData(fields: Input[]): Record<string, string> | null {
+function collectFormData(fields: Input[]): Record<string, string> | null {
   const isValid = fields.map((field) => field.validateSelf()).every(Boolean);
 
   if (!isValid || !passwordsMatch(fields)) {

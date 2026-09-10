@@ -6,7 +6,6 @@ type Events = Record<string, (event: Event) => void>;
 
 export interface BlockProps {
   events?: Events;
-  attr?: Record<string, string>;
   [key: string]: unknown;
 }
 
@@ -25,8 +24,6 @@ export default class Block<P extends BlockProps = BlockProps> {
   protected props: P;
 
   protected children: Children;
-
-  protected refs: Record<string, Block> = {};
 
   private eventBus: () => EventBus;
 
@@ -104,10 +101,6 @@ export default class Block<P extends BlockProps = BlockProps> {
     Object.assign(this.props, nextProps);
   };
 
-  public get content(): HTMLElement | null {
-    return this.element;
-  }
-
   private renderComponent(): void {
     const block = this.render();
 
@@ -121,7 +114,6 @@ export default class Block<P extends BlockProps = BlockProps> {
 
     this.element = newElement;
 
-    this.addAttributes();
     this.addEvents();
   }
 
@@ -211,14 +203,6 @@ export default class Block<P extends BlockProps = BlockProps> {
 
     Object.keys(events).forEach((eventName) => {
       this.element?.removeEventListener(eventName, events[eventName]);
-    });
-  }
-
-  private addAttributes(): void {
-    const { attr = {} } = this.props;
-
-    Object.entries(attr).forEach(([key, value]) => {
-      this.element?.setAttribute(key, value);
     });
   }
 
