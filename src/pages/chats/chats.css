@@ -76,6 +76,7 @@
 }
 
 .chats__form {
+  position: relative;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -89,14 +90,23 @@
   border: none;
 }
 
-.chats__input {
+.input_message {
   flex-grow: 1;
+  margin-bottom: 0;
+}
+
+.input_message .input__field {
   padding: 10px 20px;
   font-size: 12px;
   background-color: var(--color-bg-muted);
   border: none;
   border-radius: 30px;
-  outline: none;
+}
+
+.input_message .input__error {
+  position: absolute;
+  margin-top: 0;
+  padding-left: 20px;
 }
 
 .chats__send {

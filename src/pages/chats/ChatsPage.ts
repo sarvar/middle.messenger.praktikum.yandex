@@ -4,12 +4,19 @@ import Link from '../../components/link/Link';
 import Search from '../../components/search/Search';
 import ChatItem from '../../components/chat-item/ChatItem';
 import Message from '../../components/message/Message';
+import Input from '../../components/input/Input';
 import { chats, messages } from '../../utils/data';
-import { validate } from '../../utils/validation';
 import template from './chats.hbs?raw';
 
 export default class ChatsPage extends Block<BlockProps> {
   constructor() {
+    const messageInput = new Input({
+      label: '',
+      name: 'message',
+      placeholder: 'Сообщение',
+      class: 'input_message',
+    });
+
     super({
       profileLink: new Link({ label: 'Профиль >', href: '/profile.html' }),
       search: new Search({}),
@@ -17,32 +24,23 @@ export default class ChatsPage extends Block<BlockProps> {
       selected: 'Вадим',
       chats: chats.map((chat) => new ChatItem({ ...chat })),
       messages: messages.map((message) => new Message({ ...message })),
+      messageInput,
       events: {
-        submit: (event: Event) => this.handleSubmit(event),
+        submit: (event: Event) => this.handleSubmit(event, messageInput),
       },
     });
   }
 
-  private handleSubmit(event: Event): void {
+  private handleSubmit(event: Event, messageInput: Input): void {
     event.preventDefault();
 
-    const input = this.getContent()?.querySelector<HTMLInputElement>('.chats__input');
-
-    if (!input) {
+    if (!messageInput.validateSelf()) {
       return;
     }
 
-    const error = validate('message', input.value);
+    console.log({ message: messageInput.value });
 
-    if (error) {
-      console.log(error);
-
-      return;
-    }
-
-    console.log({ message: input.value });
-
-    input.value = '';
+    messageInput.clear();
   }
 
   protected render(): DocumentFragment {

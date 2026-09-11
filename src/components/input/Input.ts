@@ -9,6 +9,7 @@ interface InputProps extends BlockProps {
   value?: string;
   placeholder?: string;
   error?: string;
+  class?: string;
 }
 
 export default class Input extends Block<InputProps> {
@@ -16,7 +17,6 @@ export default class Input extends Block<InputProps> {
     super({
       ...props,
       events: {
-        focusin: () => this.setError(''),
         focusout: () => this.validateSelf(),
       },
     });
@@ -27,7 +27,7 @@ export default class Input extends Block<InputProps> {
   }
 
   public get value(): string {
-    return this.input?.value ?? '';
+    return this.props.value ?? '';
   }
 
   public get name(): string {
@@ -36,36 +36,27 @@ export default class Input extends Block<InputProps> {
 
   public validateSelf(): boolean {
     const { name } = this.props;
+    const value = this.input?.value ?? '';
 
     if (!isValidationRule(name)) {
+      this.setProps({ value });
+
       return true;
     }
 
-    const error = validate(name, this.value);
+    const error = validate(name, value);
 
-    this.setError(error);
+    this.setProps({ value, error });
 
     return error === '';
   }
 
   public showError(error: string): void {
-    this.setError(error);
+    this.setProps({ error });
   }
 
-  private setError(error: string): void {
-    const root = this.getContent();
-
-    if (!root) {
-      return;
-    }
-
-    const holder = root.querySelector('.input__error');
-
-    if (holder) {
-      holder.textContent = error;
-    }
-
-    root.classList.toggle('input_error', Boolean(error));
+  public clear(): void {
+    this.setProps({ value: '', error: '' });
   }
 
   protected render(): DocumentFragment {

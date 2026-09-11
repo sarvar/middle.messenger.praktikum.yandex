@@ -12,16 +12,16 @@
     <header class="chats__header">
       {{{avatar}}}
       <span class="chats__header-name">{{selected}}</span>
-      <button class="chats__menu" type="button">⋮</button>
+      <button class="chats__menu" type="button" aria-label="Меню чата">⋮</button>
     </header>
     <ul class="chats__messages">
       <li class="chats__date">19 июня</li>
       {{#each messages}}{{{this}}}{{/each}}
     </ul>
     <form class="chats__form">
-      <button class="chats__attach" type="button">📎</button>
-      <input class="chats__input" type="text" name="message" placeholder="Сообщение">
-      <button class="chats__send" type="submit">→</button>
+      <button class="chats__attach" type="button" aria-label="Прикрепить файл">📎</button>
+      {{{messageInput}}}
+      <button class="chats__send" type="submit" aria-label="Отправить сообщение">→</button>
     </form>
   </section>
 </main>

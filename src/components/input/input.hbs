@@ -1,5 +1,5 @@
-<label class="input {{#if error}}input_error{{/if}}">
-  <span class="input__label">{{label}}</span>
+<label class="input {{class}} {{#if error}}input_error{{/if}}">
+  {{#if label}}<span class="input__label">{{label}}</span>{{/if}}
   <input
     class="input__field"
     type="{{#if type}}{{type}}{{else}}text{{/if}}"

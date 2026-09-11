@@ -6,7 +6,8 @@ export type ValidationRule =
   | 'email'
   | 'password'
   | 'password_repeat'
-  | 'oldPassword'
+  | 'old_password'
+  | 'new_password'
   | 'phone'
   | 'message';
 
@@ -50,7 +51,11 @@ const RULES: Record<ValidationRule, Rule> = {
     test: (value) => PASSWORD_REGEXP.test(value),
     message: 'От 8 до 40 символов, обязательна заглавная буква и цифра',
   },
-  oldPassword: {
+  old_password: {
+    test: (value) => PASSWORD_REGEXP.test(value),
+    message: 'От 8 до 40 символов, обязательна заглавная буква и цифра',
+  },
+  new_password: {
     test: (value) => PASSWORD_REGEXP.test(value),
     message: 'От 8 до 40 символов, обязательна заглавная буква и цифра',
   },
