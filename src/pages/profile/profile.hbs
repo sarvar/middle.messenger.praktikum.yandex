@@ -1,0 +1,15 @@
+<main class="profile">
+  <a class="profile__back" href="/chats.html">←</a>
+  <div class="profile__content">
+    {{{avatar}}}
+    <h1 class="profile__name">Иван</h1>
+    <ul class="profile__list">
+      {{#each rows}}{{{this}}}{{/each}}
+    </ul>
+    <div class="profile__actions">
+      {{{editData}}}
+      {{{editPassword}}}
+      {{{logout}}}
+    </div>
+  </div>
+</main>

@@ -1,0 +1,12 @@
+:root {
+  --color-primary: #3369f3;
+  --color-primary-hover: #1e57e8;
+  --color-text: #1e1e1e;
+  --color-text-muted: #999;
+  --color-danger: #ff2f2f;
+  --color-border: #eaeaea;
+  --color-bg: #fff;
+  --color-bg-muted: #efefef;
+  --color-bg-active: #e4edfd;
+  --font-family: "Inter", -apple-system, "Segoe UI", roboto, sans-serif;
+}

@@ -1,0 +1,20 @@
+<main class="profile">
+  <a class="profile__back" href="/profile.html" aria-label="Назад в профиль">←</a>
+  <div class="profile__content">
+    {{{avatar}}}
+    <form class="profile__form">
+      {{#if withAvatarInput}}
+        <label class="profile__avatar-upload">
+          <span class="profile__avatar-upload-label">Поменять аватар</span>
+          <input class="profile__avatar-field" type="file" name="avatar" accept="image/*">
+        </label>
+      {{/if}}
+      <div class="profile__fields">
+        {{#each fields}}{{{this}}}{{/each}}
+      </div>
+      <div class="profile__submit">
+        {{{button}}}
+      </div>
+    </form>
+  </div>
+</main>

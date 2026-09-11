@@ -1,0 +1,16 @@
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 13px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.profile-row__label {
+  font-weight: 500;
+}
+
+.profile-row__value {
+  color: var(--color-text-muted);
+}
